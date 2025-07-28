@@ -11,17 +11,16 @@ module.exports.sendEmail = async (event) => {
       };
     }
 
-    // Set up transporter with Gmail and your app password
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'sumitrau74224@gmail.com',         // Replace with your Gmail address
-        pass: 'eorxpxkhyrarufbi',      // Paste your new app password here (no spaces)
+        user: 'sumitrau74224@gmail.com',       
+        pass: 'eorxpxkhyrarufbi',    
       },
     });
 
     let info = await transporter.sendMail({
-      from: '"Sumit Raut" <sumitrau74224@gmail.com>', // Change the name/email if you wish
+      from: '"Sumit Raut" <sumitrau74224@gmail.com>', 
       to: receiver_email,
       subject: subject,
       text: body_text,
